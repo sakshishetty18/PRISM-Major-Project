@@ -1,0 +1,7 @@
+{
+  "transactionId": "TXN001",
+  "sourceAccount": "ACC1001",
+  "targetAccount": "ACC2001",
+  "amount": 5000,
+  "timestamp": "2026-07-14T10:10:00"
+}

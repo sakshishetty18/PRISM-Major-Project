@@ -1,0 +1,120 @@
+{
+  "planHash": "421f169dacb224b20736de5e832780e4a94d37d35181d8ffa1e59e640bbb5794",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-10-28T16:15:21.1465196Z",
+  "retryCount": 2,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 0,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E control-tower@0.1.0 build\r\n\u003E next build\r\n\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n \u26A0 Warning: Next.js inferred your workspace root, but it may not be correct.\r\n We detected multiple lockfiles and selected the directory of C:\\Users\\Sakshi Shetty\\package-lock.json as the root directory.\r\n To silence this warning, set \u0060turbopack.root\u0060 in your Next.js config, or consider removing one of the lockfiles if it\u0027s not needed.\r\n   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.\r\n Detected additional lockfiles: \r\n   * C:\\Users\\Sakshi Shetty\\Downloads\\PRISM-main\\PRISM-main\\control-tower\\package-lock.json\r\n\r\n   \u25B2 Next.js 16.0.10 (Turbopack)\r\n\r\n \u26A0 The \u0022middleware\u0022 file convention is deprecated. Please use \u0022proxy\u0022 instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy\r\n   Creating an optimized production build ...\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n \u2713 Compiled successfully in 14.0s\r\n   Running TypeScript ...\r\n   Collecting page data using 15 workers ...\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n   Generating static pages using 15 workers (0/16) ...\r\n[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: \u0060npm i baseline-browser-mapping@latest -D\u0060\r\n   Generating static pages u\n\u2026[truncated]",
+        "durationMs": 38402
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E control-tower@0.1.0 test\r\n\u003E vitest run test\r\n\r\n\r\n RUN  v4.1.12 C:/Users/Sakshi Shetty/Downloads/PRISM-main/PRISM-main/control-tower\r\n\r\n\r\n Test Files  2 passed (2)\r\n      Tests  7 passed (7)\r\n   Start at  21:45:09\r\n   Duration  923ms (transform 192ms, setup 0ms, import 271ms, tests 478ms, environment 0ms)\r\n\r\n",
+        "durationMs": 2805,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 7,
+          "testsPassed": 7,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "webapp-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!DOCTYPE html\u003E\u003Chtml lang=\u0022en\u0022\u003E\u003Chead\u003E\u003Cmeta charSet=\u0022utf-8\u0022/\u003E\u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022/\u003E\u003Clink rel=\u0022preload\u0022 as=\u0022image\u0022 imageSrcSet=\u0022/_next/image?url=%2Ficon.png\u0026amp;w=48\u0026amp;q=75 1x, /_next/image?url=%2Ficon.png\u0026amp;w=96\u0026amp;q=75 2x\u0022/\u003E\u003Clink rel=\u0022stylesheet\u0022 href=\u0022/_next/static/chunks/%5Broot-of-the-server%5D__2107cc6e._.css\u0022 data-precedence=\u0022next_static/chunks/[root-of-the-server]__2107cc6e._.css\u0022/\u003E\u003Clink rel=\u0022preload\u0022 as=\u0022script\u0022 fetchPriority=\u0022low\u0022 href=\u0022/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_f37b3c22._.js\u0022/\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_compiled_react-dom_c0503ea8._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_compiled_react-server-dom-turbopack_5f9b5712._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_compiled_next-devtools_index_9dbd206d.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_compiled_2b4b6713._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_client_712d74bd._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_65b9a0a4._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_%40swc_helpers_cjs_ceef3a98._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/Downloads_PRISM-main_PRISM-main_control-tower_a0ff3932._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/turbopack-Downloads_PRISM-main_PRISM-main_control-tower_8395aae9._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_9e10d0bc._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_client_components_builtin_global-error_9aa5cedb.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/Downloads_PRISM-main_PRISM-main_control-tower_92ee9645._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/Downloads_PRISM-main_PRISM-main_control-tower_app_layout_tsx_9aa5cedb._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_5a461a36._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/Downloads_PRISM-main_PRISM-main_control-tower_app_74c4bfed._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/Downloads_PRISM-main_PRISM-main_control-tower_app_page_tsx_3f5446f3._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cmeta name=\u0022next-size-adjust\u0022 content=\u0022\u0022/\u003E\u003Ctitle\u003EPRISM | Fraud Intelligence\u003C/title\u003E\u003Cmeta name=\u0022description\u0022 content=\u0022Fraud Intelligence and Digital Payment Security\u0022/\u003E\u003Clink rel=\u0022shortcut icon\u0022 href=\u0022/icon.png\u0022/\u003E\u003Clink rel=\u0022icon\u0022 href=\u0022/icon.png\u0022/\u003E\u003Cscript src=\u0022/_next/static/chunks/8ecf5_next_dist_build_polyfills_polyfill-nomodule.js\u0022 noModule=\u0022\u0022\u003E\u003C/script\u003E\u003C/head\u003E\u003Cbody class=\u0022geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased\u0022\u003E\u003Cdiv hidden=\u0022\u0022\u003E\u003C!--$--\u003E\u003C!--/$--\u003E\u003C/div\u003E\u003C!--$?--\u003E\u003Ctemplate id=\u0022B:0\u0022\u003E\u003C/template\u003E\u003Cp\u003ELoading...\u003C/p\u003E\u003C!--/$--\u003E\u003Cscript\u003ErequestAnimationFrame(function(){$RT=performance.now()});\u003C/script\u003E\u003Cscript id=\u0022_R_\u0022\u003Eself.__next_r=\u0022GAwRKFGzv8tsbZCHzlCCh\u0022\u003C/script\u003E\u003Cscript src=\u0022/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_f37b3c22._.js\u0022 async=\u0022\u0022\u003E\u003C/script\u003E\u003Cdiv hidden id=\u0022S:0\u0022\u003E\u003Cdiv class=\u0022bg-black text-white min-h-screen flex flex-col\u0022\u003E\u003Cnav class=\u0022relative w-full bg-[#1A1A1A] border-b border-gray-800 z-50\u0022\u003E\u003Cdiv class=\u0022flex items-center justify-between px-4 md:px-8 py-4\u0022\u003E\u003Cdiv class=\u0022flex items-center gap-4\u0022\u003E\u003Cbutton class=\u0022md:hidden text-gray-400 hover:text-[#CAFF33] transition-colors\u0022 aria-label=\u0022Toggle Menu\u0022\u003E\u003Csvg xmlns=\u0022http://www.w3.org/2000/svg\u0022 width=\u002228\u0022 height=\u002228\u0022 viewBox=\u00220 0 24 24\u0022 fill=\u0022none\u0022 stroke=\u0022currentColor\u0022 stroke-width=\u00222\u0022 stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022 class=\u0022lucide lucide-menu\u0022 aria-hidden=\u0022true\u0022\u003E\u003Cpath d=\u0022M4 5h16\u0022\u003E\u003C/path\u003E\u003Cpath d=\u0022M4 12h16\u0022\u003E\u003C/path\u003E\u003Cpath d=\u0022M4 19h16\u0022\u003E\u003C/path\u003E\u003C/svg\u003E\u003C/button\u003E\u003Cdiv class=\u0022flex items-center shrink-0\u0022\u003E\u003Cimg alt=\u0022PRISM network mark\u0022 width=\u002235\u0022 height=\u002235\u0022 decoding=\u0022async\u0022 data-nimg=\u00221\u0022 class=\u0022object-contain\u0022 style=\u0022color:transparent\u0022 srcSet=\u0022/_next/image?url=%2Ficon.png\u0026amp;w=48\u0026amp;q=75 1x, /_next/image?url=%2Ficon.png\u0026amp;w=96\u0026amp;q=75 2x\u0022 src=\u0022/_next/image?\n\u2026[truncated]",
+        "durationMs": 10200
+      }
+    ],
+    "executions": [
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "C:\\Users\\Sakshi Shetty\\Downloads\\PRISM-main\\PRISM-main\\control-tower",
+        "env": {
+          "MONGODB_URI": "mongodb://localhost:27017/mulehunter",
+          "NEXTAUTH_SECRET": "\u003Credacted\u003E",
+          "NEXTAUTH_URL": "http://localhost:3000",
+          "JWT_SECRET": "\u003Credacted\u003E",
+          "NEXT_PUBLIC_BACKEND_BASE_URL": "http://localhost:8082",
+          "NEXT_PUBLIC_API_URL": "http://localhost:8082",
+          "NEXT_PUBLIC_ML_URL": "http://localhost:8001",
+          "NEXT_PUBLIC_SECURITY_URL": "http://localhost:8084"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "C:\\Users\\Sakshi Shetty\\Downloads\\PRISM-main\\PRISM-main\\control-tower",
+        "env": {
+          "PRISM_SECURITY_URL": "http://localhost:8084"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "webapp-serves-home",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "dev",
+          "--",
+          "--port",
+          "3111"
+        ],
+        "cwd": "C:\\Users\\Sakshi Shetty\\Downloads\\PRISM-main\\PRISM-main\\control-tower",
+        "env": {
+          "MONGODB_URI": "mongodb://localhost:27017/mulehunter",
+          "NEXTAUTH_SECRET": "\u003Credacted\u003E",
+          "NEXTAUTH_URL": "http://localhost:3000",
+          "JWT_SECRET": "\u003Credacted\u003E",
+          "NEXT_PUBLIC_BACKEND_BASE_URL": "http://localhost:8082",
+          "NEXT_PUBLIC_API_URL": "http://localhost:8082",
+          "NEXT_PUBLIC_ML_URL": "http://localhost:8001",
+          "NEXT_PUBLIC_SECURITY_URL": "http://localhost:8084"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}

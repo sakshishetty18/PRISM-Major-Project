@@ -1,0 +1,117 @@
+version: "3.8"
+
+services:
+  ai-engine:
+    container_name: mule-hunter-ai
+    build:
+      context: ./ai-engine
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./shared-data:/shared-data
+    networks:
+      - mulehunter-net
+
+  visual-analytics:
+    container_name: visual-analytics
+    build:
+      context: ./visual-analytics/eif_v_2
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8000"
+    environment:
+      INTERNAL_API_KEY: ${INTERNAL_API_KEY:-dummy}
+      BACKEND_BASE_URL: http://backend:8081
+      REQUEST_TIMEOUT: 60
+    networks:
+      - mulehunter-net
+
+  security-forensics:
+    container_name: security-forensics
+    build:
+      context: ./security-forensics
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8081"
+    networks:
+      - mulehunter-net
+
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8081"
+    environment:
+      VISUAL_INTERNAL_API_KEY: dummy
+      SECURITY_SERVICE_URL: http://security-forensics:8081
+      AI_SERVICE_URL: http://ai-engine:8001
+      EIF_SERVICE_URL: http://visual-analytics:8000
+      VISUAL_ANALYTICS_URL: http://visual-analytics:8000
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/mulehunter
+    depends_on:
+      mongo:
+        condition: service_healthy
+      security-forensics:
+        condition: service_started
+      ai-engine:
+        condition: service_started
+      visual-analytics:
+        condition: service_started
+    networks:
+      - mulehunter-net
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    networks:
+      - mulehunter-net
+
+  control-tower:
+    container_name: control-tower-app
+    build:
+      context: ./control-tower
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BACKEND_BASE_URL: http://localhost:8082
+        NEXT_PUBLIC_API_URL: http://localhost:8082
+        NEXT_PUBLIC_ML_URL: http://localhost:8001
+        NEXT_PUBLIC_SECURITY_URL: http://localhost:8084
+        NEXTAUTH_SECRET: dummy
+        NEXTAUTH_URL: http://localhost:3000
+        JWT_SECRET: dummy
+        NEXT_PUBLIC_EMAILJS_SERVICE_ID: dummy
+        NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: dummy
+        NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: dummy
+        MONGODB_URI: mongodb://mongo:27017/mulehunter
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongo:27017/mulehunter
+      NEXTAUTH_SECRET: dummy
+      NEXTAUTH_URL: http://localhost:3000
+      JWT_SECRET: dummy
+      AUTH_TRUST_HOST: "true"
+    command: ["sh", "-c", "node seedUser.js && node server.js"]
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - mulehunter-net
+
+networks:
+  mulehunter-net:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    name: mule_hunter_final_mongo_data

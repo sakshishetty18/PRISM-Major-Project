@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-10-26T18:10:00Z",
+  "generatedOnPlatform": "win32",
+  "projectType": "webapp",
+  "setup": [],
+  "assertions": [
+    {
+      "name": "production-build",
+      "kind": "process",
+      "command": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "env": {
+        "MONGODB_URI": "mongodb://localhost:27017/mulehunter",
+        "NEXTAUTH_SECRET": "runtime-validation-only",
+        "NEXTAUTH_URL": "http://localhost:3000",
+        "JWT_SECRET": "runtime-validation-only",
+        "NEXT_PUBLIC_BACKEND_BASE_URL": "http://localhost:8082",
+        "NEXT_PUBLIC_API_URL": "http://localhost:8082",
+        "NEXT_PUBLIC_ML_URL": "http://localhost:8001",
+        "NEXT_PUBLIC_SECURITY_URL": "http://localhost:8084"
+      },
+      "verificationMethod": "exit-code",
+      "expected": "0",
+      "timeoutSeconds": 600
+    },
+    {
+      "name": "tests-pass",
+      "kind": "process",
+      "command": "npm",
+      "args": [
+        "test"
+      ],
+      "env": {
+        "PRISM_SECURITY_URL": "http://localhost:8084"
+      },
+      "verificationMethod": "test-results",
+      "expected": "0",
+      "timeoutSeconds": 60
+    },
+    {
+      "name": "webapp-serves-home",
+      "kind": "http-probe",
+      "startCommand": "npm",
+      "startArgs": [
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "3111"
+      ],
+      "env": {
+        "MONGODB_URI": "mongodb://localhost:27017/mulehunter",
+        "NEXTAUTH_SECRET": "runtime-validation-only",
+        "NEXTAUTH_URL": "http://localhost:3000",
+        "JWT_SECRET": "runtime-validation-only",
+        "NEXT_PUBLIC_BACKEND_BASE_URL": "http://localhost:8082",
+        "NEXT_PUBLIC_API_URL": "http://localhost:8082",
+        "NEXT_PUBLIC_ML_URL": "http://localhost:8001",
+        "NEXT_PUBLIC_SECURITY_URL": "http://localhost:8084"
+      },
+      "url": "http://localhost:3111/",
+      "verificationMethod": "http-status",
+      "expected": "200",
+      "timeoutSeconds": 180
+    }
+  ]
+}
